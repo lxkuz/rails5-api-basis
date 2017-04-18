@@ -1,0 +1,13 @@
+common: &common
+  adapter: postgis
+  encoding: unicode
+  min_messages: WARNING
+  pool: 5
+
+development:
+  <<: *common
+  database: bangbang_dev
+
+test:
+  <<: *common
+  database: bangbang_test
