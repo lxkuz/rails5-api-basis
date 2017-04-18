@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 5.0.0'
 gem 'rack-cors', :require => 'rack/cors'
-gem 'pg'
-gem 'activerecord-postgis-adapter'
+gem 'mysql2'
 gem 'active_model_serializers'
 gem 'puma', '~> 3.0'
 gem 'rubocop', require: false
@@ -13,15 +12,9 @@ gem 'faker'
 gem 'bundler', '>= 1.8.4'
 gem 'cancancan'
 gem 'kaminari'
-gem 'resque'
-gem 'paypal-sdk-rest'
 gem 'has_scope'
-gem 'geocoder'
-gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
 gem 'interface'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'twilio-ruby'
 
 group :development, :test do
   gem 'byebug', platform: :mri
