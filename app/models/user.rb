@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable
 
   validates :role, presence: true
 
