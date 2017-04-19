@@ -10,6 +10,5 @@ Rails.application.routes.draw do
       resources :reports, only: [:show, :index, :create, :update, :destroy]
     end
   end
-  get '/api' => redirect('/swagger/dist/index.html?url=http://localhost:3000/apidocs/api-docs.json')
-  devise_for :user, defaults: { format: :json }
+  #devise_for :user, defaults: { format: :json }
 end

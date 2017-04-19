@@ -8,22 +8,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 if User.count.zero?
-  User.create! email: 'admin@mystand.ru', password: '123qwe123qwe', confirmed_at: Time.zone.now
+  User.create! email: 'lxkuz@crossover.com', password: '123qwe123qwe', role: :admin
 end
 
-if Tag.count.zero?
-  tag_names = [:activism,
-               :adventure,
-               :art,
-               :community,
-               :doer,
-               :"fitness&athletics",
-               :learning,
-               :music,
-               :outdoors,
-               :technology]
-
-  tag_names.each do |tag_name|
-    Tag.create title: tag_name
-  end
+if TicketKind.count.zero?
+  TicketKind.create! name: 'Error'
+  TicketKind.create! name: 'Question'
+  TicketKind.create! name: 'Offer'
 end

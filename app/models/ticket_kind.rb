@@ -1,5 +1,5 @@
 class TicketKind < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
-  has_many :tickets, dependent: :restrict
+  has_many :tickets, dependent: :restrict_with_exception
 end
