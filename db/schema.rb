@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20170418171412) do
     t.integer  "agent_id"
     t.datetime "closed_at"
     t.text     "closing_description", limit: 65535
-    t.string   "status",                            default: "new"
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
+    t.string   "status",                            default: "waiting"
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
     t.index ["agent_id"], name: "index_tickets_on_agent_id", using: :btree
     t.index ["customer_id"], name: "index_tickets_on_customer_id", using: :btree
     t.index ["ticket_kind_id"], name: "index_tickets_on_ticket_kind_id", using: :btree

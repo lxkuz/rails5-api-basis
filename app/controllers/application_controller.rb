@@ -44,10 +44,10 @@ class ApplicationController < ActionController::API
   end
 
   def render_access_denied
-    render json: { errors: [t('labels.access_denied')] }, status: 406
+    render json: { errors: 'Access denied' }, status: 403
   end
 
   def render_not_found
-    render json: { errors: [t('labels.record_not_found')] }, status: 406
+    render json: { errors: 'Record not found' }, status: 404
   end
 end

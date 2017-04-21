@@ -6,7 +6,7 @@ class Ticket < ApplicationRecord
   validates :name, :description,
             :ticket_kind, :customer, presence: true
 
-  STATUSES = [:closed, :new].freeze
+  STATUSES = [:closed, :waiting].freeze
 
   enum status: Hash[STATUSES.map { |i| [i, i] }]
 end

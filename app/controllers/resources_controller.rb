@@ -36,13 +36,12 @@ class ResourcesController < ApplicationController
   def destroy
     authorize! :destroy, resource
     resource.destroy
+    render json: serialize(resource).to_json
   end
 
   protected
 
   def serialize(record)
-    puts 'RECORD SERIALZIE'
-    puts record.inspect
     serializer = "#{resource_class.name}Serializer".constantize
     if record.is_a?(Array) || record.is_a?(ActiveRecord::Relation)
       record.map { |r| serializer.new(r, scope: current_user) }
@@ -60,7 +59,8 @@ class ResourcesController < ApplicationController
   end
 
   def resource_class
-    @resource_class ||= params[:controller].singularize.camelize.constantize
+    puts params[:controller]
+    @resource_class ||= params[:controller].split('/').last.singularize.camelize.constantize
   end
 
   def resource

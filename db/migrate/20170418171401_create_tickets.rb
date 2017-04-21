@@ -8,7 +8,7 @@ class CreateTickets < ActiveRecord::Migration[5.0]
       t.integer :agent_id
       t.datetime :closed_at
       t.text :closing_description
-      t.string :status, default: 'new'
+      t.string :status, default: 'waiting'
       t.timestamps
     end
 
