@@ -7,6 +7,11 @@ class User < ApplicationRecord
   ROLES = [:customer, :admin, :agent].freeze
   enum role: Hash[ROLES.map { |i| [i, i.to_s] }]
 
-  has_many :tickets, as: :customer, dependent: :restrict_with_exception
-  has_many :closed_tickets, as: :agent, dependent: :restrict_with_exception
+  has_many :tickets, 
+    foreign_key: 'customer_id', 
+    dependent: :restrict_with_exception
+  has_many :closed_tickets,
+    foreign_key: 'agent_id',
+    class_name: 'Ticket',
+    dependent: :restrict_with_exception
 end
