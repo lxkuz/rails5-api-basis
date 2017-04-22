@@ -3,6 +3,7 @@ class User < ApplicationRecord
   devise :database_authenticatable
 
   validates :role, presence: true
+  validates :email, uniqueness: true
 
   ROLES = [:customer, :admin, :agent].freeze
   enum role: Hash[ROLES.map { |i| [i, i.to_s] }]
