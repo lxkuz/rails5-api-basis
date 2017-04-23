@@ -9,7 +9,6 @@ FactoryGirl.define do
     trait :closed do
       status 'closed'
       closing_description { Faker::Lorem.sentence }
-      closed_at { Time.now }
     end
   end
 end

@@ -16,6 +16,8 @@ gem 'rails', '~> 5.0.0'
 gem 'rubocop', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'wicked_pdf'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'capybara'

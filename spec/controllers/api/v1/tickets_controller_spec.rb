@@ -90,6 +90,24 @@ RSpec.describe Api::V1::TicketsController,
       end
     end
 
+    context 'correct changing of status' do
+      it 'responds with 200' do
+        put :update, params: {
+          id: ticket,
+          status: 'closed',
+          closing_description: 'test closing description'
+        }
+        expect(response).to be_success
+      end
+    end
+
+    context 'incorrect changing of status' do
+      it 'responds with 200' do
+        put :update, params: { id: ticket, status: 'closed' }
+        expect(response.status).to eq(406)
+      end
+    end
+
     context 'incorrect id' do
       it 'returns an 404 error' do
         put :update, params: { id: 100_500, name: 'wrong' }

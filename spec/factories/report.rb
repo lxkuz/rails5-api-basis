@@ -2,10 +2,10 @@
 FactoryGirl.define do
   factory :report do
     title { Faker::Company.name }
-    data { 
+    data do
       { count: rand(100) }
-     }
-    report_from { Time.now - 1.month}
+    end
+    report_from { Time.now - 1.month }
     report_to { Time.now }
   end
 end
