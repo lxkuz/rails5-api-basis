@@ -1,6 +1,6 @@
 class ReportSerializer < BaseSerializer
   attributes :id, :title, :file
-  
+
   attribute :report_from do
     object.report_from.to_i
   end

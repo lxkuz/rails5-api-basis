@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 # require 'resque/server'
+
+CRUD = [:create, :show, :index, :update, :destroy].freeze
+
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:show, :index, :create, :update, :destroy]
+      resources :users, only: CRUD
       post 'auth', to: 'auth#authenticate_user'
-      resources :tickets, only: [:show, :index, :create, :update, :destroy]
-      resources :ticket_kinds, only: [:show, :index, :create, :update, :destroy]
-      resources :reports, only: [:show, :index, :create, :update, :destroy]
+      resources :tickets, only: CRUD
+      resources :ticket_kinds, only: CRUD
+      resources :reports, only: CRUD
     end
   end
-  #devise_for :user, defaults: { format: :json }
+  # devise_for :user, defaults: { format: :json }
 end

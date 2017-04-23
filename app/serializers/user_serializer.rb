@@ -4,5 +4,4 @@ class UserSerializer < BaseSerializer
   attribute :name do
     object.email
   end
-
 end

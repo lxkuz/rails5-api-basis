@@ -59,7 +59,6 @@ class ResourcesController < ApplicationController
   end
 
   def resource_class
-    puts params[:controller]
     @resource_class ||= params[:controller].split('/').last.singularize.camelize.constantize
   end
 

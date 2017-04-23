@@ -2,17 +2,18 @@
 FactoryGirl.define do
   factory :user do
     email { Faker::Internet.email }
-    # name  { Faker::Name.name }
-    # username {Faker::Internet.user_name }
     password { Faker::Internet.password }
 
-    trait :with_tags do
-      tags do
-        [
-          build(:tag, title: 'tag1'),
-          build(:tag, title: 'tag2')
-        ]
-      end
+    trait :admin do
+      role 'admin'
+    end
+
+    trait :customer do
+      role 'customer'
+    end
+
+    trait :agent do
+      role 'agent'
     end
   end
 end

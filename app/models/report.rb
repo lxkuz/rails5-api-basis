@@ -12,7 +12,7 @@ class Report < ApplicationRecord
 
     tickets = Ticket.where('closed_at >= ? AND closed_at <= ?', report_to, report_from)
     agents_count_data = Ticket.group(:agent_id).where('closed_at >= ? AND closed_at <= ?', report_to, report_from).count
-    data = {
+    self.data = {
       count: tickets.count,
       agents_count: agents_count_data
     }
