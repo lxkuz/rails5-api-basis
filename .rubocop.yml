@@ -16,12 +16,12 @@ Metrics/MethodLength:
 
 # Offense count: 1
 Metrics/AbcSize:
-  Max: 18
+  Max: 25
 
 # Offense count: 1
 # Configuration parameters: CountComments.
 Metrics/MethodLength:
-  Max: 16
+  Max: 20
 
 
 Documentation:

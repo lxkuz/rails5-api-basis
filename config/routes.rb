@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :tickets, only: CRUD
       resources :ticket_kinds, only: CRUD
       resources :reports, only: CRUD
+      get 'export/reports/:id', to: 'exports#report'
     end
   end
   # devise_for :user, defaults: { format: :json }

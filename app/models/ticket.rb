@@ -6,7 +6,7 @@ class Ticket < ApplicationRecord
   validates :name, :description,
             :ticket_kind, :customer, presence: true
 
-  validates :closing_description, presence: true, if: 'closed?'
+  validates :closing_description, :agent, presence: true, if: 'closed?'
   before_save :fill_closed_at
 
   STATUSES = [:closed, :waiting].freeze

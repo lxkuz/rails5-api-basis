@@ -1,0 +1,40 @@
+.container
+    %h1= "Report: #{@report.title}"
+    %p
+        %b From:
+        %span= "#{l(@report.report_from, format: :short)}"
+    %p
+        %b To:
+        %span= "#{l(@report.report_to, format: :short)}"
+    
+    %h4= "Total closed tickets count: #{@report.data['count']}"
+    %p
+    %h4 Agents work report
+    %p Detailed information about the work of agents:
+    %table.table-striped.table.table-bordered
+        %tr
+            %th Agent email
+            %th Closed tickets count
+        - @report.agents_count_data.each do |obj|
+            %tr
+                %td= "#{obj[:email]}"
+                %td= "#{obj[:count]}" 
+    %h4 Closed ticket slog
+    %table.table-striped.table.table-bordered
+        %tr
+            %th name
+            %th Customer
+            %th Description
+            %th Agent
+            %th Agent description
+            %th Closed at         
+        - @report.data['full'].each do |obj|
+            %tr
+                %td= obj['name']
+                %td= obj['customer']
+                %td= obj['description']
+                %td= obj['agent']
+                %td= obj['closing_description']
+                %td= obj['closed_at']
+
+

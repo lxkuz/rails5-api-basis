@@ -6,7 +6,6 @@ gem 'cancancan'
 gem 'devise'
 gem 'faker'
 gem 'has_scope'
-gem 'interface'
 gem 'jwt'
 gem 'kaminari'
 gem 'mysql2'
@@ -16,6 +15,9 @@ gem 'rails', '~> 5.0.0'
 gem 'rubocop', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'bootstrap-sass'
+gem 'haml-rails'
+gem 'sass-rails'
 gem 'wicked_pdf'
 
 group :development, :test do

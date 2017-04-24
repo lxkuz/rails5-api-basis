@@ -9,6 +9,7 @@ FactoryGirl.define do
     trait :closed do
       status 'closed'
       closing_description { Faker::Lorem.sentence }
+      agent { FactoryGirl.create :user, :agent }
     end
   end
 end
