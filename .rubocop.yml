@@ -23,6 +23,9 @@ Metrics/AbcSize:
 Metrics/MethodLength:
   Max: 20
 
-
 Documentation:
   Enabled: false  
+
+AllCops:
+  Exclude:
+    - 'db/schema.rb'

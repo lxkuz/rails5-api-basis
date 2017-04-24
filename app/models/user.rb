@@ -10,10 +10,10 @@ class User < ApplicationRecord
 
   has_many :tickets,
            foreign_key: 'customer_id',
-           dependent: :restrict_with_exception
+           dependent: :restrict_with_error
 
   has_many :closed_tickets,
            foreign_key: 'agent_id',
            class_name: 'Ticket',
-           dependent: :restrict_with_exception
+           dependent: :restrict_with_error
 end

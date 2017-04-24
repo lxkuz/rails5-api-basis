@@ -8,11 +8,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 if User.count.zero?
-  User.create! email: 'lxkuz@crossover.com', password: '123qwe123qwe', role: :admin
+  User.create! email: 'admin@crossover.com', password: 'admin', role: :admin
+  puts 'User created: admin@crossover.com with password: admin'
 end
 
 if TicketKind.count.zero?
   TicketKind.create! name: 'Error'
   TicketKind.create! name: 'Question'
   TicketKind.create! name: 'Offer'
+  puts 'Ticket kinds created'
 end

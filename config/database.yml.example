@@ -1,13 +1,13 @@
 common: &common
-  adapter: postgis
-  encoding: unicode
-  min_messages: WARNING
-  pool: 5
+  adapter: mysql2
+  encoding: utf8
+  host: 127.0.0.1
+  port: 3306
 
 development:
   <<: *common
-  database: bangbang_dev
+  database: lxkuz_crossover_trial_dev
 
 test:
   <<: *common
-  database: bangbang_test
+  database: lxkuz_crossover_trial_test

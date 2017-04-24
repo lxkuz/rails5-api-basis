@@ -6,6 +6,7 @@ module Api
       def create
         record = Ticket.new resource_params
         record.customer = current_user
+        record.agent = current_user if resource_params[:status] == 'closed'
         authorize! :create, record
         if record.save
           render json: serialize(record).to_json
