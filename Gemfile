@@ -6,7 +6,7 @@ gem 'pg'
 gem 'activerecord-postgis-adapter'
 gem 'active_model_serializers'
 gem 'puma', '~> 3.0'
-gem 'rubocop', require: false
+gem 'rubocop', '~> 0.49.0', require: false
 gem 'jwt'
 gem 'devise'
 gem 'faker'
@@ -17,7 +17,7 @@ gem 'resque'
 gem 'paypal-sdk-rest'
 gem 'has_scope'
 gem 'geocoder'
-gem 'paperclip'
+gem 'paperclip', '~> 5.2.0'
 gem 'aws-sdk', '~> 2.3'
 gem 'interface'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
